@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+.bgimg {
+
+    background-image: url("pizarra.png");
+    	height:500px;
+	    width:960px;
+
+}
+
+#demo {
+       color: white;
+       
+       padding: 100px;
+	   
+       font-size: 60px;
+}
+#orlando{
+}
+</style>
+
+<body>
+<div class="bgimg"><center>
+<p id="demo"></center></p>
+
+<script>
+
+var correctas = 0;
+
+var total = 0;
+
+var result;
+
+var answer 
+
+var num1=Math.floor(Math.random() * 10);
+
+var num2=Math.floor(Math.random() * 10);
+
+var operador=Math.floor(Math.random() * 3);
+
+
+
+switch (operador) {
+
+    case 0:
+        result = num1 +" + "+ num2+ " = ";
+		answer = Number(num1 + num2);
+        break;
+    case 1:
+        result = num1 +" - "+ num2+ " = ";
+		answer = Number(num1 - num2);
+        break;
+    case 2:
+        result = num1 +" X "+ num2+ " = ";
+		answer = Number(num1 * num2);
+        break;
+  
+}
+
+function verifica() {
+    var contestacion = Number(document.getElementById("orlando").value);
+	total++;
+	
+	if(contestacion == answer)
+	{
+	     correctas++;
+	     alert("correcto" + correctas + "Excelente");
+		 }
+		 
+		  
+		 
+	 else 
+	    
+	    alert("Incorrecto");
+		
+		
+		
+		
+		
+}
+
+
+document.getElementById("demo").innerHTML = result + " : <input id=orlando type=text name=fname>   <button type=button onclick=verifica()>submit</button> ";
+</script>
+</div>
+</body>
+</html>
